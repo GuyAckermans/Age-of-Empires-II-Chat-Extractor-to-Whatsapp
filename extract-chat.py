@@ -313,7 +313,7 @@ class ReplayHandler(FileSystemEventHandler):
         if self.timer:
             self.timer.cancel()
         self.pending_event = event
-        self.timer = Timer(30.0, self._debounced_process)
+        self.timer = Timer(120.0, self._debounced_process)
         self.timer.start()
 
     def _debounced_process(self):
